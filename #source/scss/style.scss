@@ -1,0 +1,229 @@
+// <ШРИФТЫ>
+
+// <Подключение шрифта>
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+// </Подключение шрифта>
+
+// <Шрифт по умолчанию>
+$font-family: "Roboto", sans-serif;
+// </Шрифт по умолчанию>
+
+// <Доп шрифты>
+
+// </Доп шрифты>
+
+// </ШРИФТЫ>
+
+// </ПЕРЕМЕННЫЕ>
+
+$min-width: 320px;
+
+$primarycolor: #f4e770;
+$secondarycolor: #e15e83;
+$fontcolor: #000;
+$maingrey: #dae0e4;
+$titlegrey: #c5cbcf;
+$textgrey: #c5cacd;
+
+// </ПЕРЕМЕННЫЕ>
+
+// <ОБНУЛЕНИЕ>
+@import "null";
+// </ОБНУЛЕНИЕ>
+
+//<ОБОЛОЧКА>
+.wrapper {
+	overflow: hidden;
+	min-height: 100%;
+}
+//</ОБОЛОЧКА>
+
+//<ОСНОВНАЯ СЕТКА>
+.container {
+	margin: 0 auto;
+	padding: 0px 10px;
+	max-width: 1920px;
+
+	@media (max-width: 1900px) {
+		max-width: 1600px;
+	}
+
+	@media (max-width: 1600px) {
+		max-width: 1280px;
+	}
+
+	@media (max-width: 1279px) {
+		max-width: 1024px;
+	}
+
+	@media (max-width: 1023px) {
+		max-width: 100%;
+	}
+
+	@media (max-width: 624px) {
+	}
+}
+//</ОСНОВНАЯ СЕТКА>
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
+@import "header";
+@import "footer";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
+
+//<ОСНОВНОЙ БЛОК>
+.page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.main-screen {
+	flex: 1 0 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	&__left {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 90%;
+		transform: rotate(180deg);
+	}
+
+	&__right {
+		width: 100%;
+		height: 100%;
+		background-color: $secondarycolor;
+	}
+
+	&__button {
+		font-size: 20px;
+		padding: 25px 90px;
+		border-radius: 2px;
+		background-color: #fff;
+		z-index: 1;
+		box-shadow: 0px 0px 10px 1px rgb(34, 33, 33);
+	}
+}
+
+//</ОСНОВНОЙ БЛОК>
+
+//<Стили попапа>
+
+.welcome {
+	background-color: $maingrey;
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__title {
+		margin: 150px 0px 0px 0px;
+		width: 300px;
+		height: 50px;
+		background-color: $titlegrey;
+	}
+
+	&__text {
+		margin: 20px 0px 150px 0px;
+		width: 100px;
+		height: 50px;
+		background-color: $titlegrey;
+	}
+
+	@media (max-width: 624px) {
+		&__title {
+			margin: 100px 0px 0px 0px;
+		}
+		&__text {
+			margin: 20px 0px 100px 0px;
+		}
+	}
+}
+
+.items {
+	&__row {
+		padding: 100px 0px 100px 0px;
+		display: flex;
+		justify-content: center;
+		column-gap: 30px;
+		row-gap: 50px;
+	}
+
+	&__column {
+		flex: 0 1 25%;
+	}
+
+	@media (max-width: 1023px) {
+		&__row {
+			flex-wrap: wrap;
+		}
+		&__column {
+			flex: 0 1 45%;
+		}
+	}
+
+	@media (max-width: 624px) {
+		&__row {
+			flex-wrap: wrap;
+			padding: 50px 0px 50px 0px;
+		}
+		&__column {
+			flex: 0 1 100%;
+		}
+	}
+
+}
+
+.item {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+
+	&__picture {
+		width: 100%;
+		padding: 100% 0px 0px 0px;
+		background-color: $maingrey;
+		margin: 0px 0px 20px 0px;
+	}
+
+	&__text {
+
+		background-color: $textgrey;
+		height: 50px;
+		border-radius: 5px;
+
+		&_one {
+			width: 40%;
+		}
+		&_two {
+			width: 80%;
+		}
+		&_three {
+			width: 60%;
+		}
+		&_four {
+			width: 35%;
+		}
+	}
+}
+
+//</Стили попапа>
